@@ -1,13 +1,8 @@
-<?php
-
-use Cake\Utility\Hash;
-?>
-<div class="sticky-top card border-primary mb-2">
-    <div class="card-body py-1">
-        <?= $this->Element('player'); ?>
-    </div>
-</div>
-<table class="table table-bordered table-sm">
+<?php ?>
+<?= $this->Form->create(null); ?>
+<?= $this->Form->end(); ?>
+<?= $this->Element('player'); ?>
+<table class="table table-bordered table-sm table-scene" set_title_url="<?= $this->Url->build(['action' => 'setTitle', '_ext' => 'json']) ?>">
     <thead class="bg-primary text-white">
         <tr>
             <th>ID</th>
@@ -26,6 +21,14 @@ use Cake\Utility\Hash;
 
 </table>
 
-<?php $this->append('script', $this->Html->script('input')); ?>
-<?php
-$this->append('script', '<script>$(function(){ var input = new Input;});</script>');
+<?php $this->append('script'); ?>
+<script>
+    var input;
+    var playList;
+    var player;
+    $(function () {
+        input = new Input;
+        playList = new PlayList;
+    });
+</script>
+<?php $this->end(); ?>

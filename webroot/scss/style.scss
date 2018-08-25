@@ -1,1 +1,20 @@
+table.table-scene{
+    tr[scene_id] {
+        input[type="text"][readonly]{
+            background-color:lightgray;
+        }
+
+        th.scene-group,th.scene{
+            cursor:pointer;
+            &:hover{    background-color:lightyellow;   }
+        }
+
+        td.in-list{
+            background-color:lightyellow;
+            &.in-play{
+                background-color:lightsalmon;
+            }
+        }
+    }
+}
 

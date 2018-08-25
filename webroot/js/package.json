@@ -1,0 +1,26 @@
+{
+  "name": "aa2v",
+  "version": "1.0.0",
+  "description": "Artificial Academy 2 Voice Player",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://nin65535@github.com/nin65535/AA2Voice.git"
+  },
+  "author": "nin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nin65535/AA2Voice/issues"
+  },
+  "homepage": "https://github.com/nin65535/AA2Voice#readme"
+}

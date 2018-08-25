@@ -44,16 +44,33 @@ class ScenesController extends AppController {
 
         foreach ($sceneGroups as $sceneGroup) {
             $scenes_in_group = [];
-            foreach( $scenes as $scene ){
-                if( strpos($scene->scene,$sceneGroup->scene_group) === 0 ){
+            foreach ($scenes as $scene) {
+                if (strpos($scene->scene, $sceneGroup->scene_group) === 0) {
                     $scenes_in_group[] = $scene;
                 }
             }
-            
+
             $sceneGroup->scenes = $scenes_in_group;
         }
 
         return $sceneGroups;
+    }
+
+    public function setTitle() {
+        
+        if( !$this->request->is('post') || !$this->request->is('ajax')){
+            throw new \InvalidArgumentException;
+        }
+        
+        $scene = $this->Scenes->get($this->request->getData('scene_id'));
+        $scene = $this->Scenes->patchEntity( $scene , ['title'=>$this->request->getData('title')]);
+        
+        $data = $this->Scenes->save($scene);
+        
+        $this->set([
+            'data' => $data,
+            '_serialize' => ['data'],
+        ]);
     }
 
 }
